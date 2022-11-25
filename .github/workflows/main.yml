@@ -7,7 +7,7 @@ jobs:
   audit:
     runs-on: ubuntu-latest
     steps:
-      - run: npm ci
+      - run: npm install-clean
       - run: npm audit
   build:
     runs-on: ubuntu-latest
