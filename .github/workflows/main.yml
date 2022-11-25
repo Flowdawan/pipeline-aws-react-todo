@@ -12,7 +12,7 @@ jobs:
       - name: install dependencies
         run: npm ci
       - name: audit
-        continue-on-error: true
+      - continue-on-error: true
         run: npm audit
   build-docker:
     runs-on: ubuntu-latest
