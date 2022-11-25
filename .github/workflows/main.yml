@@ -22,7 +22,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Build the Docker image
-        run: docker build . --file Dockerfile --tag $DOCKER_NAME:latest
+        run: docker build . --file Dockerfile --tag flo/react-todo:latest
       - name: Push to ECR
         id: ecr
         uses: jwalton/gh-ecr-push@v1
@@ -30,6 +30,6 @@ jobs:
           access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           region: us-east-1
-          image: $DOCKER_NAME:latest
+          image: flo/react-todo:latest
 
 
