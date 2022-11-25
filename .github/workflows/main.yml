@@ -17,15 +17,10 @@ jobs:
       - name: audit
         continue-on-error: true
         run: npm audit
-  docker_image-build:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag $DOCKER_NAME:latest
   docker_image-push:
     runs-on: ubuntu-latest
     steps:
+        run: docker build . --file Dockerfile --tag $DOCKER_NAME:latest
       - name: Push to ECR
         id: ecr
         uses: jwalton/gh-ecr-push@v1
