@@ -5,9 +5,12 @@ on:
     branches: [ main ]
 jobs:
   audit:
+    name: npm audit
     runs-on: ubuntu-latest
     steps:
-      - run: npm install-clean
+      - uses: actions/checkout@v2
+      - name: install dependencies
+      - run: npm ci
       - run: npm audit
   build:
     runs-on: ubuntu-latest
