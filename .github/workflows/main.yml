@@ -7,4 +7,9 @@ jobs:
   audit:
     runs-on: ubuntu-latest
     steps:
+      - run: npm ci
       - run: npm audit
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: docker build . -t flowdawan/react-todo:1.0.1
