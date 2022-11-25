@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-        allow-failure: true
+        continue-on-error: true
       - name: install dependencies
         run: npm ci
       - name: audit
